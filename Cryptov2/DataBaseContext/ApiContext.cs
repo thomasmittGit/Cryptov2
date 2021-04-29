@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace Cryptov2.DataBaseContext
 {
-    public class UsersContext : DbContext
+    public class ApiContext : Microsoft.EntityFrameworkCore.DbContext
     {
-        public UsersContext(DbContextOptions<UsersContext> options) : base(options)
+        public ApiContext(DbContextOptions<ApiContext> options) : base(options)
         {
         }
 
+        public DbSet<Crypto> Crypto { get; set; }
         public DbSet<Users> Users { get; set; }
+        public DbSet<Keys> Keys { get; set; }
     }
 }

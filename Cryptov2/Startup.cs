@@ -30,9 +30,7 @@ namespace Cryptov2
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddDbContext<CryptoContext>(opt => opt.UseInMemoryDatabase("Crypto"));
-            services.AddDbContext<CryptoContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("API")));
-            services.AddDbContext<KeysContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("API")));
-            services.AddDbContext<UsersContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("API")));
+            services.AddDbContext<ApiContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("API")));
             services.AddControllers();
         }
 

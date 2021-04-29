@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Cryptov2.Filters;
 using Cryptov2.DataBaseContext;
-using Crypto2.Models;
+using Cryptov2.Models;
 
 namespace Cryptov2.Controllers
 {
@@ -15,9 +15,9 @@ namespace Cryptov2.Controllers
     [ApiController]
     public class CryptoesController : ControllerBase
     {
-        private readonly CryptoContext _context;
+        private readonly ApiContext _context;
 
-        public CryptoesController(CryptoContext context)
+        public CryptoesController(ApiContext context)
         {
             _context = context;
         }

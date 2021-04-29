@@ -18,7 +18,7 @@ namespace Cryptov2.Filters
 
         public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
         {
-            KeysContext keysContext = context.HttpContext.RequestServices.GetRequiredService<KeysContext>();
+            ApiContext keysContext = context.HttpContext.RequestServices.GetRequiredService<ApiContext>();
 
             if (!context.HttpContext.Request.Headers.TryGetValue(ApiKeyHeaderName, out var potentialApiKey))
             {
